@@ -1,0 +1,47 @@
+{
+  "id": "tera-folle-utility-pack",
+  "title": "Tera Folle Utility Pack",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "linkovervord",
+      "flags": {}
+    },
+    {
+      "name": "Tera",
+      "flags": {}
+    }
+  ],
+  "flags": {
+    "canUpload": true
+  },
+  "packs": [
+    {
+      "name": "tera-folle-macro",
+      "label": "Tera Folle Macro",
+      "path": "packs/tera-folle-macro",
+      "package": "tera-folle-utility-pack",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    }
+  ],
+  "description": "",
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/tera-folle-custom-changes.css"
+  ],
+  "url": "https://github.com/linkovervord/tera-folle-utility-pack",
+  "manifest": "https://raw.githubusercontent.com/linkovervord/tera-folle-utility-pack/main/module/module.json",
+  "download": "https://github.com/linkovervord/tera-folle-utility-pack/releases/download/v0.0.1/tera-folle-utility-pack.zip"
+}
