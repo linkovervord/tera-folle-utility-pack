@@ -6,6 +6,6 @@ It is a small hobby project and was not designed with public distribution, stabi
 
 This project is **not intended for commercial use** and is shared freely with no profit involved.
 
-Some content may reference material related to tabletop role-playing games (such as Dungeons & Dragons), but all rights to those properties belong to their respective owners.
+Some content may reference material related to other modules (such as TheRipper93 modules), or tabletop role-playing games (such as Dungeons & Dragons), but all rights to those properties belong to their respective owners.
 
 Use this module at your own discretion.
