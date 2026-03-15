@@ -84,7 +84,26 @@ export class PortraitSelector {
           <i class="fas fa-chevron-left"></i>
         </button>` : ""}
 
-        <h2 style="margin:0;">${group.groupName}</h2>
+        <select 
+          id="group-select-tfup-pts"
+          style="
+            margin:0;
+            font-size:1.6em;
+            font-weight:bold;
+            border:none;
+            border-bottom: 2px solid #914d00;
+            background:transparent;
+            text-align:center;
+            appearance:none;
+            cursor:pointer;
+          "
+        >
+          ${this.groups.map((g, i) => `
+            <option value="${i}" ${i === this.currentGroupIndex ? "selected" : ""}>
+              ${g.groupName}
+            </option>
+          `).join("")}
+        </select>
 
         ${multipleGroups ? `
         <button id="next-group-tfup-pts" style="width:32px;height:32px;display:flex;justify-content:center;align-items:center;">
@@ -329,6 +348,21 @@ export class PortraitSelector {
     html.find("#next-group-tfup-pts").click(() => {
       this.currentGroupIndex =
         (this.currentGroupIndex + 1) % this.groups.length;
+
+      this.entityMap.clear();
+
+      html.find("#group-container-tfup-pts").html(
+        this.renderGroup(this.currentGroupIndex)
+      );
+
+      this._resetDialogHeight();
+      this.attachListeners(html);
+    });
+
+    html.find("#group-select-tfup-pts").change(ev => {
+      const index = Number(ev.currentTarget.value);
+
+      this.currentGroupIndex = index;
 
       this.entityMap.clear();
 
