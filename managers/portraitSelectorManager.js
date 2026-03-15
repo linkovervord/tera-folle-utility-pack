@@ -1,5 +1,6 @@
 import { PortraitSelectorGroupEditor } from "../editors/portraitSelectorGroupEditor.js";
 import { getPortraitSelectorData, savePortraitSelectorData } from "../scripts/dataStore.js";
+import { exportPortraitManagerData, importPortraitManagerData } from "./dataManager.js";
 
 export class PortraitSelectorManager extends FormApplication {
 
@@ -40,6 +41,32 @@ export class PortraitSelectorManager extends FormApplication {
 
       this._editGroupName(index, value);
     })
+
+    html.find(".export-data-tfup-pts").click(() => {
+      exportPortraitManagerData();
+    });
+
+    html.find(".import-data-tfup-pts").click(() => {
+      new Dialog({
+        title: "Import Portrait Data",
+        content: `
+          <input type="file" id="import-file-tfup-pts" accept=".json"/>
+        `,
+        buttons: {
+          import: {
+            label: "Import",
+            callback: async (html) => {
+
+              const file = html.find("#import-file-tfup-pts")[0].files[0];
+              if (!file) return;
+
+              await importPortraitManagerData(file);
+              this.render();
+            }
+          }
+        }
+      }).render(true);
+    });
   }
 
   async _createGroup() {

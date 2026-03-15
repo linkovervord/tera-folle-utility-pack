@@ -5,17 +5,11 @@ import { MODULE_ID } from "./constants.js";
 import { checkDnDCss, setupGameSystemsSettingsHandler } from "../handlers/gameSystemsHandler.js";
 import { checkFilePickerPlusCss, setupOtherModulesSettingsHandler } from "../handlers/otherModulesHandler.js";
 
-let portraitSelecorInstance;
+let portraitSelectorInstance;
 
-Hooks.once("ready", async () => {
-  portraitSelecorInstance = new PortraitSelector();
-
-  game.modules.get(MODULE_ID).api = {
-    openPortraitSelector: () => {
-      portraitSelecorInstance.open();
-    }
-  };
-
+Hooks.once("ready", () => {
+  setupSingletonInstances();
+  setupModuleApi();
   checkAllCss();
 });
 
@@ -24,6 +18,23 @@ Hooks.once("init", () => {
   setupGameSystemsSettingsHandler();
   setupOtherModulesSettingsHandler();
 });
+
+function setupModuleApi() {
+  game.modules.get(MODULE_ID).api = {
+    openPortraitSelector: () => {
+      if (!game.user.isGM) {
+        ui.notifications.warn("Only GM can open the Portrait Manager Selector.");
+        return;
+      }
+      
+      portraitSelectorInstance.open();
+    }
+  }
+}
+
+function setupSingletonInstances() {
+  portraitSelectorInstance = new PortraitSelector();
+}
 
 function setupModuleSettings() {
   game.settings.registerMenu(MODULE_ID, "portraitSelectorEditor", {
