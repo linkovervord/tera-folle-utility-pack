@@ -1,7 +1,7 @@
 {
   "id": "tera-folle-utility-pack",
   "title": "Tera Folle Utility Pack",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -38,10 +38,7 @@
   "esmodules": [
     "scripts/main.js"
   ],
-  "styles": [
-    "styles/tera-folle-custom-changes.css"
-  ],
   "url": "https://github.com/linkovervord/tera-folle-utility-pack",
   "manifest": "https://raw.githubusercontent.com/linkovervord/tera-folle-utility-pack/main/module.json",
-  "download": "https://github.com/linkovervord/tera-folle-utility-pack/releases/download/v0.0.5/tera-folle-utility-pack.zip"
+  "download": "https://github.com/linkovervord/tera-folle-utility-pack/releases/download/v0.1.0/tera-folle-utility-pack.zip"
 }

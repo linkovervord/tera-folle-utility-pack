@@ -1,0 +1,12 @@
+#file-picker {
+  min-width: 750px!important;
+}
+#filepicker-tab > #file-picker {
+  min-width: unset!important;
+}
+:not(.filepicker-sidebar) #file-picker .body:has(.directory.folders):has(.directory.files-list) {
+  grid-template-columns: 1fr 1fr!important;
+}
+#filepicker-tab :not(.filepicker-sidebar) #file-picker .body:has(.directory.folders):has(.directory.files-list) {
+  grid-template-columns: 1fr 2fr!important;
+}

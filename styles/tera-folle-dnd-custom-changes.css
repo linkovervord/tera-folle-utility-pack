@@ -4,18 +4,6 @@
 .sheet.item.container {
   min-width: 900px!important;
 }
-#file-picker {
-  min-width: 750px!important;
-}
-#filepicker-tab > #file-picker {
-  min-width: unset!important;
-}
-:not(.filepicker-sidebar) #file-picker .body:has(.directory.folders):has(.directory.files-list) {
-  grid-template-columns: 1fr 1fr!important;
-}
-#filepicker-tab :not(.filepicker-sidebar) #file-picker .body:has(.directory.folders):has(.directory.files-list) {
-  grid-template-columns: 1fr 2fr!important;
-}
 /*
 .application.sheet.journal-entry.dnd5e2.dnd5e2-journal.titlebar.expanded,
 .application.sheet.journal-sheet.journal-entry-page.text.dnd5e2.dnd5e2-journal.titlebar.dialog-lg {
