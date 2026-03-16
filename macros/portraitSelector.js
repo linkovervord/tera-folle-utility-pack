@@ -323,7 +323,7 @@ export class PortraitSelector {
       const img = ev.currentTarget;
       const entity = this.entityMap.get(img.dataset.entityId);
 
-      const texture = new ImagePopout(img.src, {
+      const texture = new ImagePopout(img.src.replace(/^http?:\/\/[^/]+/, ""), {
         title: "Immagine di " + entity.name + " | Mostrata da " + game.user.name
       });
 
